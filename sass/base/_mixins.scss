@@ -1,20 +1,21 @@
-@mixin vendored($tag,$value){
+@mixin vendored($tag,$value) {
     -webkit-#{$tag}: $value;
-    -moz-#{$tag}: $value;
-    -ms-#{$tag}: $value;
-    -o-#{$tag}: $value;
-    #{$tag}: $value;
+    -moz-#{$tag}   : $value;
+    -ms-#{$tag}    : $value;
+    -o-#{$tag}     : $value;
+    #{$tag}        : $value;
 }
-
 @mixin animate ($attr, $time) {
-    @include vendored(transition,$attr $time ease)
+     @include vendored(transition,$attr $time ease)
 }
-
 @mixin transform ($val) {
-    @include vendored(transform, $val)
+     @include vendored(transform, $val)
 }
-
-@keyframes spin{
-    from { @include transform (rotate(0deg)); }
-    to { @include transform (rotate(360deg)); }
+@keyframes spin {
+    from {
+        @include transform (rotate(0deg));
+    }
+    to {
+        @include transform (rotate(360deg));
+    }
 }
